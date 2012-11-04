@@ -15,6 +15,13 @@ class registor{
 	public static function AddFileAndAlias($path,& $FileHandler){
 		
 	}
+	public static function IteralFolder($filePath,& $PathArray){
+		if(!is_dir($filePath) && //最后一个/后的东西是个.php) {
+			array_push($PathAray,$filePath);
+			return ;
+		}
+
+	}
 	public static function regist($filenames){
 
 		if(!($filenames instanceof string))
@@ -22,6 +29,11 @@ class registor{
 		//如果参数的末尾是个*，那么就需要分割并且识别出路径
 		if($filenames){
 			$filenames = trim($filenames);
+			$filePathParts = explode('/',$filenames);
+			if(in_array('*',$filePathparts)){
+				//遍历所指的文件夹，并且返回一个数组，其中存
+				//储了所有的文件的路径。
+			}
 			2012/11/4
 		}
 		if(is_array($filename)){
